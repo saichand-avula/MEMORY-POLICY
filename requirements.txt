@@ -6,14 +6,23 @@ peft>=0.12.0
 trl>=0.11.0
 accelerate>=0.33.0
 
-# Optional: 4-bit quantisation (NVIDIA GPU only)
-# bitsandbytes>=0.43.0
+# Essential utilities
+numpy>=1.24.0
+requests>=2.31.0
+pyyaml>=6.0
 
-# Optional: faster tokenization
+# Tokenization & serialization
 tokenizers>=0.19.0
-
-# Utilities
-sentencepiece>=0.2.0    # needed by some tokenizers
+sentencepiece>=0.2.0
 protobuf>=3.20.0
+
+# NVIDIA GPU optimizations (for training on GPU instances)
+bitsandbytes>=0.43.0          # 4-bit quantisation for memory efficiency
+flash-attn>=2.5.0             # Faster attention mechanism
+# Note: Ensure CUDA 12.1+ and cuDNN 8.9+ are installed on GPU instance
+
+# Optional: monitoring & debugging
+tensorboard>=2.15.0
+wandb>=0.16.0                 # optional: for experiment tracking
 
 
