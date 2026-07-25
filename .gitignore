@@ -59,5 +59,9 @@ htmlcov/
 *.pt
 *.pth
 *.ckpt
+*.safetensors
 models/
 checkpoints/
+adapter/
+output/
+memory.json
