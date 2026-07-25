@@ -15,6 +15,8 @@ Steps:
 import os
 import logging
 
+from transformers.trainer_utils import get_last_checkpoint
+
 import torch
 from transformers import (
     AutoTokenizer,
@@ -255,7 +257,9 @@ def main() -> None:
 
     # 8. Train
     log.info("Starting training…")
-    trainer.train()
+    last_checkpoint = get_last_checkpoint(config.OUTPUT_DIR)
+
+    trainer.train(resume_from_checkpoint=last_checkpoint)
     log.info("Training complete.")
 
     # 9. Save LoRA adapter (weights only — not the full merged model)
