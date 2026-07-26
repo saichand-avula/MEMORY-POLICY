@@ -54,14 +54,12 @@ htmlcov/
 # Logs
 *.log
 
-# Model files and checkpoints
-*.bin
-*.pt
-*.pth
-*.ckpt
-*.safetensors
+# Model files and checkpoints > 100MB (GitHub limit)
+adapter/memory-policy-lora/*.safetensors
+adapter/memory-policy-dpo-v1/*.safetensors
+adapter/memory-policy-dpo-v2/*.safetensors
+
 models/
 checkpoints/
-adapter/
 output/
 memory.json
