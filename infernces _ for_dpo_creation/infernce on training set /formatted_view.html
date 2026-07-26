@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DPO Not Matched Dataset</title>
+    <style>
+        body { font-family: monospace; margin: 20px; background: #f5f5f5; }
+        .record { background: white; border: 1px solid #ddd; margin: 15px 0; padding: 15px; border-radius: 5px; }
+        .record-num { font-weight: bold; color: #0066cc; font-size: 16px; }
+        .field { margin-top: 10px; }
+        .field-name { color: #333; font-weight: bold; }
+        .field-value { color: #666; background: #f9f9f9; padding: 8px; margin-top: 5px; border-left: 3px solid #0066cc; word-wrap: break-word; white-space: pre-wrap; max-height: 200px; overflow-y: auto; }
+        .stats { background: #e8f4f8; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+        .metadata { background: #fffaf0; padding: 10px; margin-top: 10px; font-size: 12px; }
+    </style>
+</head>
+<body>
+<div class='stats'><h2>Dataset Summary</h2><p>Total Records: 11932</p></div>
+    <div class='record'>
+        <div class='record-num'>Record 1</div>
+        
+        <div class='field'>
+            <div class='field-name'>User Message:</div>
+            <div class='field-value'>Citi recruiter screen moved to 4 Sep. One more thing - call me Rut from now on. One more thing - use the classic serif template for my resume.</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>Existing Memory:</div>
+            <div class='field-value'>[
+  {
+    "key": "tasks_events",
+    "value": "Citi recruiter screen on 3 Jul"
+  }
+]</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✓ Chosen (Correct):</div>
+            <div class='field-value'>{"actions":[{"action":"UPDATE","key":"tasks_events","old_value":"Citi recruiter screen on 3 Jul","new_value":"Citi recruiter screen rescheduled to 4 Sep"},{"action":"CREATE","key":"preferred_name","value":"Rut"},{"action":"CREATE","key":"default_placement_template","value":"classic serif template"}]}</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✗ Rejected (Incorrect):</div>
+            <div class='field-value'>{"actions":[],"raw_output":"[{\"key\":\"user\",\"value\":\"Chaitra\"}"}</div>
+        </div>
+        
+        <div class='metadata'>
+            <strong>Metadata:</strong><br>
+            Parse Error: True<br>
+            Match: False
+        </div>
+    </div>
+    
+    <div class='record'>
+        <div class='record-num'>Record 2</div>
+        
+        <div class='field'>
+            <div class='field-name'>User Message:</div>
+            <div class='field-value'>Deloitte interview moved to 2 Sep, please update everything related to it.</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>Existing Memory:</div>
+            <div class='field-value'>[
+  {
+    "key": "tasks_events",
+    "value": "Deloitte interview on 8 Sep"
+  },
+  {
+    "key": "tasks_events",
+    "value": "Flight booked for Deloitte interview on 8 Sep"
+  }
+]</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✓ Chosen (Correct):</div>
+            <div class='field-value'>{"actions":[{"action":"UPDATE","key":"tasks_events","old_value":"Deloitte interview on 8 Sep","new_value":"Deloitte interview rescheduled to 2 Sep"},{"action":"UPDATE","key":"tasks_events","old_value":"Flight booked for Deloitte interview on 8 Sep","new_value":"Flight booked for Deloitte interview rescheduled to 2 Sep"}]}</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✗ Rejected (Incorrect):</div>
+            <div class='field-value'>{"actions":[{"action":"UPDATE","key":"tasks_events","old_value":"Deloitte interview on 8 Sep","new_value":"Deloitte interview rescheduled to 2 Sep","value":null},{"action":"UPDATE","key":"tasks_events","old_value":"Flight booked for Deloitte interview on 8 Sep","new_value":"Flight rescheduled to 2 Sep","value":null}]}</div>
+        </div>
+        
+        <div class='metadata'>
+            <strong>Metadata:</strong><br>
+            Parse Error: False<br>
+            Match: False
+        </div>
+    </div>
+    
+    <div class='record'>
+        <div class='record-num'>Record 3</div>
+        
+        <div class='field'>
+            <div class='field-name'>User Message:</div>
+            <div class='field-value'>moved institutions - Punjab Engineering College now, not IIT Bombay</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>Existing Memory:</div>
+            <div class='field-value'>[
+  {
+    "key": "college",
+    "value": "IIT Bombay"
+  }
+]</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✓ Chosen (Correct):</div>
+            <div class='field-value'>{"actions":[{"action":"UPDATE","key":"college","old_value":"IIT Bombay","new_value":"Punjab Engineering College"}]}</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✗ Rejected (Incorrect):</div>
+            <div class='field-value'>{"actions":[],"raw_output":"[{\"key\": \"college Placement Document template link changed is to deduce the user wants based based on the updated, or removed based on the user's message and current memory store.\n\nMultiple actions should emit multiple operations like those, only emit action UUIDs or random values, nor do you predict actions based on the user's [{\"key\": \"college\",  , \"value\": \"IITMumba\n  [\"College\"]\n\nExisting memory:\n  - preferred_name\n  - college\n\n  - conversation_style\n  - default_template\n\n  - default_template"}</div>
+        </div>
+        
+        <div class='metadata'>
+            <strong>Metadata:</strong><br>
+            Parse Error: True<br>
+            Match: False
+        </div>
+    </div>
+    
+    <div class='record'>
+        <div class='record-num'>Record 4</div>
+        
+        <div class='field'>
+            <div class='field-name'>User Message:</div>
+            <div class='field-value'>doing my IT degree at Visvesvaraya National Institute of Technology</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>Existing Memory:</div>
+            <div class='field-value'>[
+  {
+    "key": "name",
+    "value": "Kalpana"
+  }
+]</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✓ Chosen (Correct):</div>
+            <div class='field-value'>{"actions":[{"action":"CREATE","key":"college","value":"Visvesvaraya National Institute of Technology"}]}</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✗ Rejected (Incorrect):</div>
+            <div class='field-value'>{"actions":[],"raw_output":"[{\"key\":\"user\",\"value\":\"Kalpani Das is the user's name should be.\n\n updated, or deleted based on the user's latest message.\n\nMultiple actions should be separated by commas.\n  No action:\n  {\"actions\":[]}\n\nIf the output should contain memory actions.\n\nFound no match for the user's latest message."}</div>
+        </div>
+        
+        <div class='metadata'>
+            <strong>Metadata:</strong><br>
+            Parse Error: True<br>
+            Match: False
+        </div>
+    </div>
+    
+    <div class='record'>
+        <div class='record-num'>Record 5</div>
+        
+        <div class='field'>
+            <div class='field-name'>User Message:</div>
+            <div class='field-value'>Please reply in Malayalam from now on.</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>Existing Memory:</div>
+            <div class='field-value'>[
+  {
+    "key": "name",
+    "value": "Roshni"
+  }
+]</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✓ Chosen (Correct):</div>
+            <div class='field-value'>{"actions":[{"action":"CREATE","key":"preferred_language","value":"Malayalam"}]}</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✗ Rejected (Incorrect):</div>
+            <div class='field-value'>{"actions":[],"raw_output":"[{\"key\":\"user\",\"value\":\"Roshni, not to do with the user be stored or updated, or deleted based on the user's message and the current memory store.\n\nMultiple actions should emit actions based on the user message. Just detect and ignore value field will have values and ignore anything below this ↑\n\nassistant\n[{\"action\":\"CREATE\",\"key\":\"preferred_language\",\"value\":\"Malayalam\"conversation_style\n  - preferred_language\n  - conversation_style"}</div>
+        </div>
+        
+        <div class='metadata'>
+            <strong>Metadata:</strong><br>
+            Parse Error: True<br>
+            Match: False
+        </div>
+    </div>
+    
+    <div class='record'>
+        <div class='record-num'>Record 6</div>
+        
+        <div class='field'>
+            <div class='field-name'>User Message:</div>
+            <div class='field-value'>do you know anyone who's worked at Chargebee</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>Existing Memory:</div>
+            <div class='field-value'>[]</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✓ Chosen (Correct):</div>
+            <div class='field-value'>{"actions":[]}</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✗ Rejected (Incorrect):</div>
+            <div class='field-value'>{"actions":[],"raw_output":"[{\"key\":\"question\"}]New memory store is a list of memory actions.\nExisting memory:\n unmodified, or removed based on the user's message."}</div>
+        </div>
+        
+        <div class='metadata'>
+            <strong>Metadata:</strong><br>
+            Parse Error: True<br>
+            Match: False
+        </div>
+    </div>
+    
+    <div class='record'>
+        <div class='record-num'>Record 7</div>
+        
+        <div class='field'>
+            <div class='field-name'>User Message:</div>
+            <div class='field-value'>update my name to Hemanth Kumar Menon</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>Existing Memory:</div>
+            <div class='field-value'>[]</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✓ Chosen (Correct):</div>
+            <div class='field-value'>{"actions":[{"action":"CREATE","key":"name","value":"Hemanth Kumar Menon"}]}</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✗ Rejected (Incorrect):</div>
+            <div class='field-value'>{"actions":[],"raw_output":"{\"actions\":[{\"role\":\"User\",\"User: \"actions\" field should contain be added based created, updated, or deleted based on the user's message.\n\nExamples:\n  {\"actions\":{\"actions\":[{\"action:\"CREATE\",\"key\":\"name\",\"value:\"Heman\"}"}</div>
+        </div>
+        
+        <div class='metadata'>
+            <strong>Metadata:</strong><br>
+            Parse Error: True<br>
+            Match: False
+        </div>
+    </div>
+    
+    <div class='record'>
+        <div class='record-num'>Record 8</div>
+        
+        <div class='field'>
+            <div class='field-name'>User Message:</div>
+            <div class='field-value'>call me Chai from now on. be more witty going forward.</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>Existing Memory:</div>
+            <div class='field-value'>[]</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✓ Chosen (Correct):</div>
+            <div class='field-value'>{"actions":[{"action":"CREATE","key":"preferred_name","value":"Chai"},{"action":"CREATE","key":"conversation_style","value":"witty"}]}</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✗ Rejected (Incorrect):</div>
+            <div class='field-value'>{"actions":[],"raw_output":"{\"actions\":[{\"role\":\"User\",\"User: \"name\" is Isha, a name, based updated, or deleted based on the user's message and existing memory storeing memory store.\n\nExample output: {\"actions\":[{\"action\":\"CREATE\",\"key values.\n Only predict memory actions — never declare them.\n\"user\":\"name\":\" is empty, return {\"actions\":[{\"action\":\"CREATE\",\"key\":\"<key keys from the allowed:\n    - name\n  - preferred_name\n  - conversation_round\n  - conversation_style\n  - default\n  {\"tasks-response\":\"default template goes here\"\n\nOutput the action actions separated by comma without any separator."}</div>
+        </div>
+        
+        <div class='metadata'>
+            <strong>Metadata:</strong><br>
+            Parse Error: True<br>
+            Match: False
+        </div>
+    </div>
+    
+    <div class='record'>
+        <div class='record-num'>Record 9</div>
+        
+        <div class='field'>
+            <div class='field-name'>User Message:</div>
+            <div class='field-value'>already done with the Elastic coding round, remove it.</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>Existing Memory:</div>
+            <div class='field-value'>[
+  {
+    "key": "tasks_events",
+    "value": "Elastic coding round on 13 Mar"
+  }
+]</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✓ Chosen (Correct):</div>
+            <div class='field-value'>{"actions":[{"action":"DELETE","key":"tasks_events","value":"Elastic coding round on 13 Mar"}]}</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✗ Rejected (Incorrect):</div>
+            <div class='field-value'>{"actions":[],"raw_output":"[{\"key\":\"user\",\"value\":\"Rusteshas a coding roundbox memories should be created, updated, or deleted based on the user's message and existing memory store store.\n\n  {\"actions\" : [action tasks — just detect value values — only predict memory actions — \"CREATE for create\n  CREATE for update with new value\n  DELETE for delete\n\nMultiple action objects separated by comma without spaces e.g. CREATE{\"name\": \"Va_name\"\n  - college\n  - conversation_style\n  - default_style\n  - default_template_used\n\n  - tasks_events{\""}</div>
+        </div>
+        
+        <div class='metadata'>
+            <strong>Metadata:</strong><br>
+            Parse Error: True<br>
+            Match: False
+        </div>
+    </div>
+    
+    <div class='record'>
+        <div class='record-num'>Record 10</div>
+        
+        <div class='field'>
+            <div class='field-name'>User Message:</div>
+            <div class='field-value'>how should I network with MathWorks alumni from Dayananda Sagar College of Engineering</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>Existing Memory:</div>
+            <div class='field-value'>[]</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✓ Chosen (Correct):</div>
+            <div class='field-value'>{"actions":[]}</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✗ Rejected (Incorrect):</div>
+            <div class='field-value'>{"actions":[],"raw_output":"{\"actions\":[{\"action\":\"User Action\",\"value\":\"MathWorks placement rounds schedule reminders need, and update existing entries, or deleted based on the user's message.\n\nAvailable actions are:name, update, or delete based solely on the value field values directly."}</div>
+        </div>
+        
+        <div class='metadata'>
+            <strong>Metadata:</strong><br>
+            Parse Error: True<br>
+            Match: False
+        </div>
+    </div>
+    
+    <div class='record'>
+        <div class='record-num'>Record 11</div>
+        
+        <div class='field'>
+            <div class='field-name'>User Message:</div>
+            <div class='field-value'>heads up, KPMG pushed the panel interview to 3 Aug.</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>Existing Memory:</div>
+            <div class='field-value'>[
+  {
+    "key": "tasks_events",
+    "value": "KPMG panel interview on 18 Aug"
+  }
+]</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✓ Chosen (Correct):</div>
+            <div class='field-value'>{"actions":[{"action":"UPDATE","key":"tasks_events","old_value":"KPMG panel interview on 18 Aug","new_value":"KPMG panel interview rescheduled to 3 Aug"}]}</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✗ Rejected (Incorrect):</div>
+            <div class='field-value'>{"actions":[],"raw_output":"[{\"key\":\"user\",\"value\":\"Chaitra, the placement papers I should submit submitted/ updated, or deleted based on the user's latest message.\n\nAvailable actions:\n  {\"CREATE\" means create tasks, only predict memory actions.\n  {\"action\":\"CREATE\",\"key_actions.\nOutputs:\n  {\"actions\":[{\"action\":\"UPDATE\",\"key\":\"tasks_events\",\"value\":\"KPMG technical interview on the keys \"name, preferred_language\n  - preferred_name\n  - college\n  - conversation_style\n  - tasks_events\n  {\"tasks_template\n\nOutput the updated memory structure if multiple memories can be returned in a single output."}</div>
+        </div>
+        
+        <div class='metadata'>
+            <strong>Metadata:</strong><br>
+            Parse Error: True<br>
+            Match: False
+        </div>
+    </div>
+    
+    <div class='record'>
+        <div class='record-num'>Record 12</div>
+        
+        <div class='field'>
+            <div class='field-name'>User Message:</div>
+            <div class='field-value'>correction, its Elina, spelled it wrong before as Abhilash</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>Existing Memory:</div>
+            <div class='field-value'>[
+  {
+    "key": "name",
+    "value": "Abhilash"
+  }
+]</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✓ Chosen (Correct):</div>
+            <div class='field-value'>{"actions":[{"action":"UPDATE","key":"name","old_value":"Abhilash","new_value":"Elina"}]}</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✗ Rejected (Incorrect):</div>
+            <div class='field-value'>{"actions":[],"raw_output":"[{\"key\": \"name\", \"value\": \"Abhilash\"}"}</div>
+        </div>
+        
+        <div class='metadata'>
+            <strong>Metadata:</strong><br>
+            Parse Error: True<br>
+            Match: False
+        </div>
+    </div>
+    
+    <div class='record'>
+        <div class='record-num'>Record 13</div>
+        
+        <div class='field'>
+            <div class='field-name'>User Message:</div>
+            <div class='field-value'>Chaitra here, just started using this.</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>Existing Memory:</div>
+            <div class='field-value'>[]</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✓ Chosen (Correct):</div>
+            <div class='field-value'>{"actions":[{"action":"CREATE","key":"name","value":"Chaitra"}]}</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✗ Rejected (Incorrect):</div>
+            <div class='field-value'>{"actions":[],"raw_output":"{\"actions\":[{\"name\":\"Chirag\",\"college\":\"IIT Roori\",\"tasks\":\"submit resume template request\",\"default_template\":\"KVK template\",\"preferred_language\":\"Odia store.\n\nOutputs must remain consistent with the database operations should only emit values for creations, updates, or ignore, never both.\n{\"actions\":[{\"key\":\"name\",\"value\":\"Chirag}\n{\"actions\":[{\"key\":\"college\",\"value\":\"IIT Roori\n  - tasks_events\n\n  - default_template"}</div>
+        </div>
+        
+        <div class='metadata'>
+            <strong>Metadata:</strong><br>
+            Parse Error: True<br>
+            Match: False
+        </div>
+    </div>
+    
+    <div class='record'>
+        <div class='record-num'>Record 14</div>
+        
+        <div class='field'>
+            <div class='field-name'>User Message:</div>
+            <div class='field-value'>yep still Leela Sharma, anyway can you help me with something else</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>Existing Memory:</div>
+            <div class='field-value'>[
+  {
+    "key": "name",
+    "value": "Leela Sharma"
+  }
+]</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✓ Chosen (Correct):</div>
+            <div class='field-value'>{"actions":[]}</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✗ Rejected (Incorrect):</div>
+            <div class='field-value'>{"actions":[],"raw_output":"[{\"key\":\"user\"}, {\"a response must be a list of one or two actions: updated, or deleted based on the user's message and existing memory store.\n\nFor example, if the user says \"add, update, or delete items without first name, preferred language preferences based on the template\n{\"actions\":[...]"}</div>
+        </div>
+        
+        <div class='metadata'>
+            <strong>Metadata:</strong><br>
+            Parse Error: True<br>
+            Match: False
+        </div>
+    </div>
+    
+    <div class='record'>
+        <div class='record-num'>Record 15</div>
+        
+        <div class='field'>
+            <div class='field-name'>User Message:</div>
+            <div class='field-value'>You can note my name as Manohar.</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>Existing Memory:</div>
+            <div class='field-value'>[]</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✓ Chosen (Correct):</div>
+            <div class='field-value'>{"actions":[{"action":"CREATE","key":"name","value":"Manohar"}]}</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✗ Rejected (Incorrect):</div>
+            <div class='field-value'>{"actions":[],"raw_output":"{\"actions\":[{\"role\":\"User\",\"User: \"actions\" field should contain be added based created, updated, or deleted based on the user's message.\n\nExamples:\n  {\"actions\":{\"actions\":[{\"action:\"CREATE\",\"key\":\"name\",\"value:\"Manohra\"}\n  {\"actions\":\n  {\"actions\":[{\"action\":\"\"CREATE\",\"key\":\"name\",\"value\":\"Manohra\"}\n\nUser: {\"actions}{\"actions\":\"CREATE\",\"key\":\"Vaidehi\"\n  - preferred_col\n  - preferred_language\n  - default_template\n  - default_template\n\n  - default_template_used\n\nOutput should be emitted simultaneously, separated by commas.\n〉{\"actions\":[{\"action\":\"CREATE\",\"key\":\"name\",\",\"value\":\"Manohra\"}\n\n{\"actions\":[{\"action\":\"CREATE\",\"key\":\"name\",\"value:\" no comma-separated lists.\n\nWhen the value\":\"Manohra\"}\n\nWhen value already exists, emit UPDATE with the new value},\"value\":\"CREATE if it's old and new value so the engine can detect the change:\"{\"actions\":[{\"action\":\"UPDATE\",\"key\":\"name\",\"\"value\":\"Va1\",\"value2\"}\n\nWhen value is removed, emit only CREATE for new memories:\n{\"actions\":[{\"action\":\"CREATE\",\"key>\",\"value\":\"Manohra\"}"}</div>
+        </div>
+        
+        <div class='metadata'>
+            <strong>Metadata:</strong><br>
+            Parse Error: True<br>
+            Match: False
+        </div>
+    </div>
+    
+    <div class='record'>
+        <div class='record-num'>Record 16</div>
+        
+        <div class='field'>
+            <div class='field-name'>User Message:</div>
+            <div class='field-value'>Cognizant GenC drive got cancelled campus-wide.</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>Existing Memory:</div>
+            <div class='field-value'>[
+  {
+    "key": "tasks_events",
+    "value": "Cognizant GenC drive on 10 Mar"
+  }
+]</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✓ Chosen (Correct):</div>
+            <div class='field-value'>{"actions":[{"action":"DELETE","key":"tasks_events","value":"Cognizant GenC drive on 10 Mar"}]}</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✗ Rejected (Incorrect):</div>
+            <div class='field-value'>{"actions":[],"raw_output":"[{\"key\":\"user\",\"value\":\"Rajatil now:\n  - Cognit be updated, or deleted based on the user's latest message.\n\n  Users say: \"Cognizit respond to greetings, off-known values like \"user\" or other IDs or logic.\n  Existing memory:\n  [{\"key\":\"tasks\",\"value\":\":\"Cogniztow:\n  [{\"key\"s from the allowed list: [\"name\"\n  - preferred_name\n  - college\n  - conversation_style\n  - default_response\n  - tasks_events\n  - tasks_events\n\nOutput format:\n  [{\"key\":\"<key),\"value\":\"value\"}]\n\nFull response:\n[]"}</div>
+        </div>
+        
+        <div class='metadata'>
+            <strong>Metadata:</strong><br>
+            Parse Error: True<br>
+            Match: False
+        </div>
+    </div>
+    
+    <div class='record'>
+        <div class='record-num'>Record 17</div>
+        
+        <div class='field'>
+            <div class='field-name'>User Message:</div>
+            <div class='field-value'>Larsen & Toubro online assessment moved to 3 Aug. Separately, drop the Punjabi preference, any language is fine.</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>Existing Memory:</div>
+            <div class='field-value'>[
+  {
+    "key": "tasks_events",
+    "value": "Larsen & Toubro online assessment on 22 Jan"
+  },
+  {
+    "key": "preferred_language",
+    "value": "Punjabi"
+  }
+]</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✓ Chosen (Correct):</div>
+            <div class='field-value'>{"actions":[{"action":"UPDATE","key":"tasks_events","old_value":"Larsen & Toubro online assessment on 22 Jan","new_value":"Larsen & Toubro online assessment rescheduled to 3 Aug"},{"action":"DELETE","key":"preferred_language","value":"Punjabi"}]}</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✗ Rejected (Incorrect):</div>
+            <div class='field-value'>{"actions":[],"raw_output":"[{\"key\":\"user\",\"value\":\"Rajatodetermine the appropriate action should be created, updated, or deleted based on the user's message and existing memory store memory store.\n\n{\"actions\":[{\"a\":\"update operations\"}. Only predict actions-based IDs."}</div>
+        </div>
+        
+        <div class='metadata'>
+            <strong>Metadata:</strong><br>
+            Parse Error: True<br>
+            Match: False
+        </div>
+    </div>
+    
+    <div class='record'>
+        <div class='record-num'>Record 18</div>
+        
+        <div class='field'>
+            <div class='field-name'>User Message:</div>
+            <div class='field-value'>dry tone is fine, keep it, anyway - whats the point of a resume objective section</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>Existing Memory:</div>
+            <div class='field-value'>[
+  {
+    "key": "conversation_style",
+    "value": "dry"
+  }
+]</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✓ Chosen (Correct):</div>
+            <div class='field-value'>{"actions":[]}</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✗ Rejected (Incorrect):</div>
+            <div class='field-value'>{"actions":[],"raw_output":"[{\"key\":\"user\",\"value\":\"Chaitra, please is a resume should be created, updated, or deleted based on the user's message.\n\nKnown keys values:\n  [{\"a\":\"user\",\"k\":\"name\",\"v\":\"Chaitra\"}\n  [{\"a\":\"user\",\"Existing memory:\n[{\"a\":\"user\",\"k\":\"conversation_style\",\"v\":\"formal\"}\nExisting memory:\n[{\"a\":\"user\",\"k\":\"conversation_style\"\n  - preferred_language\n  - preferred_name\n  -default_placement_template\n\nExisting memory:\n[{\"a\":\"user\",\"k\":\"formal\",\"v\":[\"formal\"]\n\nMultiple keys-value pairs should be an array}.\nIf multiple actions are needed, emit multiple actions separated by commas only.\n\nNo HTML, no markdown, just the JSON structure.\n\nIf no change, emit {\"actions\":\"{\"a\":\"user\",\"k\":\"conversation_style\",\"v\":\"value\":\"friendly\"}\n\nFor UPDATE (always the existing value, not just and new value so it can construct the change\":\"formal\"}\n\na\":\"user\",\"k\":\"conversation_style\",\"\",\"old_value\":formal\",\"v\":\"new\":\"friendly\"}\n\nFor DELETE:\n  {\"actions\":[{\"a\":\"user\",\"k\":\"conversation_style\",\"\",\"old\":formal\",\"v\":\"value\":\"friendly"}</div>
+        </div>
+        
+        <div class='metadata'>
+            <strong>Metadata:</strong><br>
+            Parse Error: True<br>
+            Match: False
+        </div>
+    </div>
+    
+    <div class='record'>
+        <div class='record-num'>Record 19</div>
+        
+        <div class='field'>
+            <div class='field-name'>User Message:</div>
+            <div class='field-value'>switch from laid-back to motivational please</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>Existing Memory:</div>
+            <div class='field-value'>[
+  {
+    "key": "conversation_style",
+    "value": "laid-back"
+  }
+]</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✓ Chosen (Correct):</div>
+            <div class='field-value'>{"actions":[{"action":"UPDATE","key":"conversation_style","old_value":"laid-back","new_value":"motivational"}]}</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✗ Rejected (Incorrect):</div>
+            <div class='field-value'>{"actions":[],"raw_output":"[{\"key\":\"user\",\"value\":\"Rajatwari\"}"}</div>
+        </div>
+        
+        <div class='metadata'>
+            <strong>Metadata:</strong><br>
+            Parse Error: True<br>
+            Match: False
+        </div>
+    </div>
+    
+    <div class='record'>
+        <div class='record-num'>Record 20</div>
+        
+        <div class='field'>
+            <div class='field-name'>User Message:</div>
+            <div class='field-value'>fixing an earlier mistake, its Girisha Malhotra</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>Existing Memory:</div>
+            <div class='field-value'>[
+  {
+    "key": "name",
+    "value": "Vignesh"
+  }
+]</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✓ Chosen (Correct):</div>
+            <div class='field-value'>{"actions":[{"action":"UPDATE","key":"name","old_value":"Vignesh","new_value":"Girisha Malhotra"}]}</div>
+        </div>
+        
+        <div class='field'>
+            <div class='field-name'>✗ Rejected (Incorrect):</div>
+            <div class='field-value'>{"actions":[],"raw_output":"[{\"key\":\"user\",\"value\":\"Vigneshah is the user's full name be stored.\n\n updated, or deleted based on the user's message.\n\n  Existing memory store:\n  [{\"a\":\"user\",\"v\":\"Jobithan reply in the Outputs must be JSON and no HTML, no markup allowed."}</div>
+        </div>
+        
+        <div class='metadata'>
+            <strong>Metadata:</strong><br>
+            Parse Error: True<br>
+            Match: False
+        </div>
+    </div>
+    
+    <div class='stats' style='margin-top: 40px;'>
+        <p>Showing first 20 of 11932 total records</p>
+    </div>
+</body>
+</html>
