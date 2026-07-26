@@ -24,6 +24,9 @@ LORA_TASK_TYPE   = "CAUSAL_LM"
 # ── Training ─────────────────────────────────────────────────────────────────
 OUTPUT_DIR          = "output/memory-policy-lora"
 ADAPTER_SAVE_DIR    = "adapter/memory-policy-lora"
+DPO_ADAPTER_SAVE_DIR    = "adapter/memory-policy-dpo-v1"   # DPO v1 adapter
+DPO_ADAPTER_V2_SAVE_DIR = "adapter/memory-policy-dpo-v2"  # DPO v2 adapter
+DPO_ADAPTER_V3_SAVE_DIR = "adapter/memory-policy-dpo-v3"  # DPO v3 adapter (current)
 
 NUM_TRAIN_EPOCHS    = 3
 PER_DEVICE_BATCH    = 4        # increase if VRAM allows

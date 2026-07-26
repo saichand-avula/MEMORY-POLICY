@@ -1,12 +1,13 @@
 """
 serve.py — Persistent model server.
 
-Loads the LoRA model ONCE into RAM/MPS, then stays alive.
+Loads the DPO-finetuned LoRA model ONCE into RAM/GPU, then stays alive.
 Send messages via the companion `chat.py` script or curl.
 
 Usage:
     python3 serve.py                      # starts server on port 8765
     python3 serve.py --port 8765
+    python3 serve.py --adapter adapter/memory-policy-lora   # use SFT adapter instead
 
 Then in another terminal:
     python3 chat.py "My name is Saichand"
@@ -231,7 +232,8 @@ def main():
     global memory_file_path
 
     parser = argparse.ArgumentParser(description="Memory Policy persistent server")
-    parser.add_argument("--adapter", default=config.ADAPTER_SAVE_DIR)
+    parser.add_argument("--adapter", default=config.DPO_ADAPTER_V3_SAVE_DIR,
+                        help="Path to LoRA adapter (default: DPO v3 adapter)")
     parser.add_argument("--port", type=int, default=DEFAULT_PORT)
     parser.add_argument("--memory-file", default=DEFAULT_MEMORY_FILE)
     args = parser.parse_args()
@@ -239,7 +241,7 @@ def main():
     memory_file_path = args.memory_file
 
     print("═" * 55)
-    print("  Memory Policy LoRA — Persistent Inference Server")
+    print("  Memory Policy — DPO LoRA Inference Server")
     print("═" * 55)
 
     load_model(args.adapter)
